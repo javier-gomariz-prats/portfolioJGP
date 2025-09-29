@@ -1,0 +1,76 @@
+---
+import Header from '../components/Header.astro';
+import Project from "../components/Project.astro";
+import Sidebar from "../components/Sidebar.astro";
+const experiences = [
+  {
+    title: "SendingBay (March 2024-June 2024)",
+    desc: [
+      "Internship as a Frontend Developer",
+      "Made demo websites in Wordpress, Prestashop, Html and PHP",
+      "Helped with other side projects during the internship"
+    ],
+    tech: ["JavaScript", "Wordpress", "PHP", ".NET", "Git", "HTML", "CSS"]
+  },
+];
+const studies = [
+  {
+    title: "Higher Degree Web Development (September 2022-June 2024)",
+    desc: [
+      "Degree in Web Development in CIEEP Progresa",
+    ],
+    tech: ["Angular", "Java", "MongoDB", "JavaScript", "TypeScript", "Firebase", "Git"]
+  },
+];
+---
+
+<!DOCTYPE html>
+<html
+>
+  <Header title="experience | Javier Gomariz" />
+  <body>
+    <div class="content">
+        <Sidebar selectedItem="experience" />
+      <nav class="main">
+        <div class="container">
+          <div class="back-nav-container">
+            <a href="/" class="back-nav-button w-inline-block"
+              ><img src="/assets/back.svg" loading="lazy" alt="" class="back-nav-img" />
+              <div>Back</div></a
+            >
+          </div>
+          <div class="content-container">
+            <h1>Experience </h1>
+            <section class="items-container">
+                <div class="resouce-items">
+                    {experiences.map(experience => (
+                      <Project 
+                        title={experience.title} 
+                        desc={experience.desc}
+                        tech={experience.tech}
+                      />
+                    ))}
+                  </div>
+            </section>
+          </div>
+           <div class="content-container">
+            <h1>Studies</h1>
+            <section class="items-container">
+                <div class="resouce-items">
+                    {studies.map(studie => (
+                      <Project 
+                        title={studie.title} 
+                        desc={studie.desc}
+                        tech={studie.tech}
+                      />
+                    ))}
+                  </div>
+            </section>
+          </div>
+        </div>
+      </nav>
+    </div>
+
+    <!--[if lte IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/placeholders/3.0.2/placeholders.min.js"></script><![endif]-->
+  </body>
+</html>

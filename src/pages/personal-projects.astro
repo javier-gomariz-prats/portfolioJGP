@@ -1,0 +1,67 @@
+---
+import Header from '../components/Header.astro';
+import Project from '../components/Project.astro';
+import Sidebar from '../components/Sidebar.astro';
+const projects = [
+  {
+    title: "PokeCore",
+    desc: [
+      "Pokemon competitive team repository",
+      "Developed in Angular for Degree Final Project"
+    ],
+    tech: ["Angular", "Firebase", "HTML" ,"CSS", "TypeScript", "Boostrap"]
+  },
+  {
+    title: "Pokedex",
+    desc: [
+      "Pokedex with API fetch and data fetching ",
+      "Developed in React as a for fun evening project"
+    ],
+    tech: ["React", "TypeScript", "DenoDeploy"]
+  },
+  {
+    title: "Portfolio",
+    desc: [
+      "My portfolio, you are watching it already.",
+    ],
+    tech: ["Astro", "JavaScript"]
+  }
+];
+---
+
+<!DOCTYPE html>
+<html
+>
+  <Header title="Personal Projects | Sam Bernstein" />
+  <body>
+    <div class="content">
+        <Sidebar selectedItem="personal-projects" />
+      <nav class="main">
+        <div class="container">
+          <div class="back-nav-container">
+            <a href="/" class="back-nav-button w-inline-block"
+              ><img src="/assets/back.svg" loading="lazy" alt="" class="back-nav-img" />
+              <div>Back</div></a
+            >
+          </div>
+          <div class="content-container">
+            <h1>Personal Projects</h1>
+            <section class="items-container">
+                <div class="resouce-items">
+                    {projects.map(project => (
+                      <Project 
+                        title={project.title} 
+                        desc={project.desc}
+                        tech={project.tech}
+                      />
+                    ))}
+                  </div>
+            </section>
+          </div>
+        </div>
+      </nav>
+    </div>
+
+    <!--[if lte IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/placeholders/3.0.2/placeholders.min.js"></script><![endif]-->
+  </body>
+</html>

@@ -1,0 +1,174 @@
+---
+const { selectedItem } = Astro.props;
+---
+
+<aside
+  data-animation="default"
+  data-collapse="medium"
+  data-duration="400"
+  data-easing="ease"
+  data-easing2="ease"
+  role="banner"
+  class="sidebar w-nav flex flex-col h-screen relative"
+>
+  <div class="nav-content flex flex-col flex-grow">
+    <a href="/" class="w-nav-brand" aria-label="home">
+      <div class="niv-data">
+        <img
+          src="/assets/jgpfoto.jpeg"
+          loading="eager"
+          alt="Profile picture"
+          class="niv-image"
+        />
+        <div>
+          <div class="label-white">Javier Gomariz</div>
+          <div class="label-gray">Software Developer</div>
+        </div>
+      </div>
+    </a>
+
+    <nav role="navigation" class="w-nav-menu mt-6 flex flex-col gap-2">
+      <a
+        href="/"
+        class={`nav-link-container w-inline-block ${
+          selectedItem === 'home' ? 'w--current' : ''
+        }`}
+      >
+        <img
+          src="/assets/home.svg"
+          loading="eager"
+          alt=""
+          class="nav-link-image"
+        />
+        <div>Home</div>
+      </a>
+      <a
+        href="/experience"
+        class={`nav-link-container w-inline-block ${
+          selectedItem === 'experience' ? 'w--current' : ''
+        }`}
+      >
+        <img
+          src="/assets/graduation.svg"
+          loading="eager"
+          alt=""
+          class="nav-link-image"
+        />
+        <div>Experience & Studies</div>
+      </a>
+      <a
+        href="/software-development"
+        class={`nav-link-container w-inline-block ${
+          selectedItem === 'software-development' ? 'w--current' : ''
+        }`}
+        aria-current={
+          selectedItem === 'software-development' ? 'page' : undefined
+        }
+      >
+        <img
+          src="/assets/code.svg"
+          loading="eager"
+          alt=""
+          class="nav-link-image"
+        />
+        <div>Software development</div>
+      </a>
+      
+      <a
+        href="/personal-projects"
+        class={`nav-link-container w-inline-block ${
+          selectedItem === 'personal-projects' ? 'w--current' : ''
+        }`}
+      >
+        <img
+          src="/assets/favorite.svg"
+          loading="eager"
+          alt=""
+          class="nav-link-image"
+        />
+        <div>Personal projects</div>
+      </a>
+    </nav>
+
+    <div
+      class="navbar-icon-button w-nav-button mt-4"
+      style="-webkit-user-select: text;"
+      aria-label="menu"
+      role="button"
+      tabindex="0"
+    >
+      <img
+        src="/assets/menu.svg"
+        loading="eager"
+        alt=""
+        class="navbar-icon"
+      />
+    </div>
+
+    <!-- Social links pinned to bottom of nav-content -->
+    <div class="social-links flex gap-20 p-4 mt-auto justify-center">
+
+    <div class="flex gap-20 justify-center mt-auto">
+      <!-- GitHub -->
+      <a href="https://github.com/javier-gomariz-prats"
+         target="_blank" rel="noopener noreferrer" title="GitHub"
+         class="inline-flex items-center justify-center w-14 h-14 rounded-full bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-900 transition">
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="white" viewBox="0 0 16 16">
+          <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 
+          2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 
+          0-.19-.01-.82-.01-1.49-2.01.37-2.53
+          -.49-2.69-.94-.09-.23-.48-.94-.82-1.13
+          -.28-.15-.68-.52-.01-.53.63-.01 1.08.58 
+          1.23.82.72 1.21 1.87.87 2.33.66.07
+          -.52.28-.87.51-1.07-1.78-.2-3.64-.89
+          -3.64-3.95 0-.87.31-1.59.82-2.15
+          -.08-.2-.36-1.02.08-2.12 0 0 .67
+          -.21 2.2.82.64-.18 1.32-.27 
+          2-.27s1.36.09 2 .27c1.53-1.04 
+          2.2-.82 2.2-.82.44 1.1.16 1.92.08 
+          2.12.51.56.82 1.27.82 2.15 
+          0 3.07-1.87 3.75-3.65 
+          3.95.29.25.54.73.54 1.48 
+          0 1.07-.01 1.93-.01 2.2 
+          0 .21.15.46.55.38A8.01 
+          8.01 0 0 0 16 8c0-4.42
+          -3.58-8-8-8"/>
+        </svg>
+      </a>
+
+      <!-- LinkedIn -->
+      <a href="https://www.linkedin.com/in/javier-gomariz-prats-20ab902a0/"
+         target="_blank" rel="noopener noreferrer" title="LinkedIn"
+         class="inline-flex items-center justify-center w-14 h-14 rounded-full bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-900 transition">
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="white" viewBox="0 0 16 16">
+          <path d="M0 1.146C0 .513.324 0 .725 0h14.55c.4 
+          0 .725.513.725 1.146v13.708c0 .633-.324 
+          1.146-.725 1.146H.725A.723.723 0 0 
+          1 0 14.854V1.146zM4.943 13.394V6.169H2.542v7.225h2.401zM3.742 
+          5.182c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 
+          0-1.343.539-1.343 1.248 0 .694.52 
+          1.248 1.327 1.248h.016zm4.316 
+          8.212V9.58c0-.204.015-.408.076-.554.168-.407.553-.829 
+          1.2-.829.847 0 1.186.628 1.186 1.548v3.649h2.298V9.395c0-2.137-1.138-3.13-2.652-3.13-1.223 
+          0-1.771.675-2.078 1.148h-.03V6.169H6.297c.03.646 
+          0 7.225 0 7.225h1.761z"/>
+        </svg>
+      </a>
+    </div>
+    </div>
+  </div>
+
+  <script>
+    import { setupNav } from '../scripts/nav.js';
+    
+    let cleanup;
+    document.addEventListener('astro:page-load', () => {
+      if (cleanup) cleanup();
+      cleanup = setupNav();
+    });
+
+    document.addEventListener('astro:before-swap', () => {
+      if (cleanup) cleanup();
+    });
+  </script>
+</aside>
